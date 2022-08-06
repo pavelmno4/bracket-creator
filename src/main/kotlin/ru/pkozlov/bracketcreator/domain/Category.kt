@@ -7,7 +7,7 @@ import javax.persistence.Id
 import javax.persistence.SequenceGenerator
 
 @Entity
-@SequenceGenerator(name = "category_seq_generator", sequenceName = "category_seq", allocationSize = 1)
+@SequenceGenerator(name = "category_id_seq_generator", sequenceName = "category_id_seq", allocationSize = 1)
 class Category(
     @Id val id: Long,
 

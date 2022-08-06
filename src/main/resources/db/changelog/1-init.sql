@@ -2,7 +2,7 @@
 --changeset pkozlov:1-init.sql
 
 -- tournament
-create sequence if not exists tournament_seq
+create sequence if not exists tournament_id_seq
     minvalue 1
     increment 1;
 
@@ -16,7 +16,7 @@ create table if not exists tournament
 );
 
 -- category
-create sequence if not exists category_seq
+create sequence if not exists category_id_seq
     minvalue 1
     increment 1;
 
@@ -30,7 +30,7 @@ create table if not exists category
 );
 
 -- team
-create sequence if not exists team_seq
+create sequence if not exists team_id_seq
     minvalue 1
     increment 1;
 
@@ -43,7 +43,7 @@ create table if not exists team
 );
 
 -- participant
-create sequence if not exists participant_seq
+create sequence if not exists participant_id_seq
     minvalue 1
     increment 1;
 

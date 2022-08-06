@@ -12,7 +12,7 @@ import javax.persistence.*
         Index(name = "participant_tournament_id_idx", columnList = "tournament_id")
     ]
 )
-@SequenceGenerator(name = "participant_seq_generator", sequenceName = "participant_seq", allocationSize = 1)
+@SequenceGenerator(name = "participant_id_seq_generator", sequenceName = "participant_id_seq", allocationSize = 1)
 class Participant(
     @Id val id: Long,
 

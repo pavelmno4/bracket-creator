@@ -5,7 +5,7 @@ import javax.persistence.Id
 import javax.persistence.SequenceGenerator
 
 @Entity
-@SequenceGenerator(name = "team_seq_generator", sequenceName = "team_seq", allocationSize = 1)
+@SequenceGenerator(name = "team_id_seq_generator", sequenceName = "team_id_seq", allocationSize = 1)
 class Team(
     @Id val id: Long,
 
