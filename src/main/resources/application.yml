@@ -1,0 +1,11 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/bracket_creator
+        username: bracket
+        password: 1134
+    jpa:
+        hibernate:
+            ddl-auto: validate
+    liquibase:
+        change-log: classpath:db/changelog/db.changelog-master.yml
+
