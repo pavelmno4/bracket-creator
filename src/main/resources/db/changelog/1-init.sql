@@ -8,11 +8,11 @@ create sequence if not exists tournament_id_seq
 
 create table if not exists tournament
 (
-    id    bigint not null
+    id    bigint       not null
         primary key,
-    date  timestamp,
-    name  varchar(255),
-    place varchar(255)
+    date  date         not null,
+    name  varchar(255) not null,
+    place varchar(255) not null
 );
 
 -- category
@@ -22,12 +22,15 @@ create sequence if not exists category_id_seq
 
 create table if not exists category
 (
-    id                         bigint not null
+    id                         bigint         not null
         primary key,
-    lower_birth_date_threshold date,
-    upper_birth_date_threshold date,
-    weight                     numeric(19, 2)
+    lower_birth_year_threshold smallint       not null,
+    upper_birth_year_threshold smallint       not null,
+    weight                     numeric(19, 2) not null
 );
+
+create index if not exists category_lower_birth_year_threshold_weight_idx
+    on category (lower_birth_year_threshold, weight);
 
 -- team
 create sequence if not exists team_id_seq
@@ -36,10 +39,10 @@ create sequence if not exists team_id_seq
 
 create table if not exists team
 (
-    id   bigint not null
+    id   bigint       not null
         primary key,
-    city varchar(255),
-    name varchar(255)
+    city varchar(255) not null,
+    name varchar(255) not null
 );
 
 -- participant
@@ -49,13 +52,13 @@ create sequence if not exists participant_id_seq
 
 create table if not exists participant
 (
-    id            bigint not null
+    id            bigint         not null
         primary key,
-    birth_date    date,
-    first_name    varchar(255),
-    gender        integer,
-    last_name     varchar(255),
-    weight        numeric(19, 2),
+    birth_date    date           not null,
+    first_name    varchar(255)   not null,
+    gender        varchar(255)   not null,
+    last_name     varchar(255)   not null,
+    weight        numeric(19, 2) not null,
     category_id   bigint
         constraint participant_category_id_fk
             references category,

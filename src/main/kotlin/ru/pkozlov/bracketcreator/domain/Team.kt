@@ -1,5 +1,6 @@
 package ru.pkozlov.bracketcreator.domain
 
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.SequenceGenerator
@@ -9,7 +10,9 @@ import javax.persistence.SequenceGenerator
 class Team(
     @Id val id: Long,
 
+    @Column(nullable = false)
     val name: String,
 
+    @Column(nullable = false)
     val city: String
 )

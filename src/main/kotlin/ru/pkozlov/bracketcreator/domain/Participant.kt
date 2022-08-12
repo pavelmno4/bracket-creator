@@ -16,23 +16,29 @@ import javax.persistence.*
 class Participant(
     @Id val id: Long,
 
-    val lastName: String,
+    @Column(nullable = false)
+    var lastName: String,
 
-    val firstName: String,
+    @Column(nullable = false)
+    var firstName: String,
 
-    val birthDate: LocalDate,
+    @Column(nullable = false)
+    var birthDate: LocalDate,
 
-    val gender: Gender,
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    var gender: Gender,
 
-    val weight: BigDecimal,
+    @Column(nullable = false)
+    var weight: BigDecimal = BigDecimal.ZERO,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", foreignKey = ForeignKey(name = "participant_team_id_fk"))
-    val team: Team,
+    var team: Team,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", foreignKey = ForeignKey(name = "participant_category_id_fk"))
-    val category: Category,
+    var category: Category,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tournament_id", foreignKey = ForeignKey(name = "participant_tournament_id_fk"))

@@ -1,6 +1,7 @@
 package ru.pkozlov.bracketcreator.domain
 
-import java.time.LocalDateTime
+import java.time.LocalDate
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.SequenceGenerator
@@ -10,9 +11,12 @@ import javax.persistence.SequenceGenerator
 class Tournament(
     @Id val id: Long,
 
-    val name: String,
+    @Column(nullable = false)
+    var name: String,
 
-    val date: LocalDateTime,
+    @Column(nullable = false)
+    var date: LocalDate,
 
-    val place: String
+    @Column(nullable = false)
+    var place: String
 )
