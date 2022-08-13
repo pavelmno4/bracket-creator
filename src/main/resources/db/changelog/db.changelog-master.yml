@@ -1,3 +1,13 @@
 databaseChangeLog:
   - include:
       file: db/changelog/1-init.sql
+  - changeSet:
+      id: 2
+      author: pkozlov
+      logicalFilePath: db/changelog/2-category-function.sql
+      changes:
+        sqlFile:
+          path: db/changelog/2-category-function.sql
+          splitStatements: false
+  - include:
+      file: db/changelog/3-category-data.sql

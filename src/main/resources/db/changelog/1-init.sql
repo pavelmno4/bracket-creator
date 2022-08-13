@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset pkozlov:1-init.sql
+--changeset pkozlov:1 logicalFilePath:db/changelog/1-init.sql
 
 -- tournament
 create sequence if not exists tournament_id_seq
