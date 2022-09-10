@@ -11,3 +11,5 @@ databaseChangeLog:
           splitStatements: false
   - include:
       file: db/changelog/3-category-data.sql
+  - include:
+      file: db/changelog/4-user-data.sql
